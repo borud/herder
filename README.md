@@ -6,3 +6,4 @@ them if they start to consume obscene amounts of CPU.  For instance
 
 Note that this is an experimental piece of software I mostly wrote to
 figure out if Go is useful for system stuff.
+

@@ -12,10 +12,12 @@ import (
 	"github.com/shirou/gopsutil/process"
 )
 
-var name = flag.String("name", "", "Process name to monitor")
-var loadFactor = flag.Float64("limit", 0.7, "Load limit")
-var grace = flag.Int("grace", 20, "Grace period after kill in seconds")
-var samples = flag.Int("samples", 3, "Number of times in a row process needs to be over the limit before killed")
+var (
+	name       = flag.String("name", "", "Process name to monitor")
+	loadFactor = flag.Float64("limit", 0.7, "Load limit")
+	grace      = flag.Int("grace", 20, "Grace period after kill in seconds")
+	samples    = flag.Int("samples", 3, "Number of times in a row process needs to be over the limit before killed")
+)
 
 func init() {
 	logwriter, err := syslog.New(syslog.LOG_ERR, "herder")
